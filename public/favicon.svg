@@ -1,13 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Minimalist Chess Pawn -->
+  <!-- Background -->
   <rect width="64" height="64" rx="12" fill="#fafaf9"/>
   
-  <!-- Pawn Head -->
-  <circle cx="32" cy="22" r="8" fill="#1c1917"/>
+  <!-- Cross -->
+  <rect x="30" y="12" width="4" height="12" fill="#1c1917"/>
+  <rect x="26" y="16" width="12" height="4" fill="#1c1917"/>
   
-  <!-- Pawn Body -->
-  <path d="M24 46 Q 32 25 40 46 Z" fill="#1c1917"/>
+  <!-- Crown -->
+  <path d="M 18 28 L 26 40 L 38 40 L 46 28 L 36 30 L 32 22 L 28 30 Z" fill="#1c1917"/>
   
-  <!-- Pawn Base -->
-  <rect x="20" y="46" width="24" height="4" rx="2" fill="#1c1917"/>
+  <!-- Base Divider -->
+  <rect x="24" y="42" width="16" height="3" fill="#1c1917"/>
+  
+  <!-- Base Bottom -->
+  <path d="M 22 47 L 42 47 L 46 52 L 18 52 Z" fill="#1c1917"/>
+  
+  <!-- Base Foot -->
+  <rect x="16" y="54" width="32" height="4" rx="2" fill="#1c1917"/>
 </svg>
