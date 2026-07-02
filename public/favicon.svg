@@ -1,15 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Soft grey background, suitable for greyscale screens -->
-  <rect width="64" height="64" rx="16" fill="#e5e5e5"/>
+  <!-- Minimalist white background -->
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
   
-  <!-- Cross -->
-  <rect x="30" y="12" width="4" height="12" fill="#111111" rx="1"/>
-  <rect x="26" y="16" width="12" height="4" fill="#111111" rx="1"/>
-  
-  <!-- Crown body -->
-  <path d="M 16 28 L 24 42 L 40 42 L 48 28 L 37 32 L 32 22 L 27 32 Z" fill="#111111" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
-  
-  <!-- Base rings -->
-  <rect x="22" y="46" width="20" height="3" fill="#111111" rx="1.5"/>
-  <rect x="18" y="52" width="28" height="4" fill="#111111" rx="2"/>
+  <!-- Professional King Piece Silhouette -->
+  <g fill="#171717">
+    <!-- Cross -->
+    <path d="M 30 14 L 34 14 L 34 18 L 38 18 L 38 22 L 34 22 L 34 26 L 30 26 L 30 22 L 26 22 L 26 18 L 30 18 Z" />
+    
+    <!-- Crown -->
+    <path d="M 16 32 L 24 45 L 40 45 L 48 32 L 38 36 L 32 26 L 26 36 Z" stroke="#171717" stroke-width="2" stroke-linejoin="round" />
+    
+    <!-- Base -->
+    <rect x="22" y="48" width="20" height="3" rx="1.5" />
+    <path d="M 18 56 C 18 54 20 53 23 53 L 41 53 C 44 53 46 54 46 56 C 46 58 44 59 41 59 L 23 59 C 20 59 18 58 18 56 Z" />
+  </g>
 </svg>
