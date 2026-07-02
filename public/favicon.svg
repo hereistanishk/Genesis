@@ -1,35 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
   <!-- Minimalist white background -->
-  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <rect width="100" height="100" rx="20" fill="#ffffff"/>
   
-  <!-- Professional Queen Piece Silhouette -->
-  <g fill="#171717" stroke="#171717" stroke-width="1.5" stroke-linejoin="round">
-    <!-- Crown Points -->
-    <circle cx="16" cy="22" r="2.2" />
-    <circle cx="24" cy="16" r="2.2" />
-    <circle cx="32" cy="14" r="2.5" />
-    <circle cx="40" cy="16" r="2.2" />
-    <circle cx="48" cy="22" r="2.2" />
+  <g fill="#ffffff" stroke="#000000" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 6. Base Dome -->
+    <path d="M 33 65 C 28 68, 26 73, 26 78 C 26 83, 74 83, 74 78 C 74 73, 72 68, 67 65 Z" stroke-width="2"/>
+    <path d="M 67 65 C 72 68, 74 73, 74 78 C 74 81.5, 50 83, 26 78" fill="none" stroke-width="4"/>
 
-    <!-- Crown -->
-    <path d="M 24 38 
-             L 16 22 
-             L 22 28 
-             L 24 16 
-             L 28 26 
-             L 32 14 
-             L 36 26 
-             L 40 16 
-             L 42 28 
-             L 48 22 
-             L 40 38 
-             Z" />
+    <!-- 5. Collar 2 -->
+    <path d="M 30 63 C 30 59, 70 59, 70 63 C 70 67, 30 67, 30 63 Z" stroke-width="2"/>
+    <path d="M 70 63 C 70 66.5, 50 67, 30 63" fill="none" stroke-width="4"/>
 
-    <!-- Body -->
-    <path d="M 24 38 C 26 43 26 47 22 51 L 42 51 C 38 47 38 43 40 38 Z" />
+    <!-- 4. Body -->
+    <path d="M 40 43 C 40 50, 34 58, 33 62 L 67 62 C 66 58, 60 50, 60 43 Z" stroke-width="2"/>
+    <path d="M 60 43 C 60 50, 66 58, 67 62" fill="none" stroke-width="4"/>
 
-    <!-- Base Rings -->
-    <rect x="20" y="51" width="24" height="3" rx="1.5" />
-    <path d="M 16 58 C 16 55.5 18 54 21 54 L 43 54 C 46 54 48 55.5 48 58 C 48 60.5 46 62 43 62 L 21 62 C 18 62 16 60.5 16 58 Z" />
+    <!-- 3. Collar 1 -->
+    <path d="M 36 43 C 36 40, 64 40, 64 43 C 64 46, 36 46, 36 43 Z" stroke-width="2"/>
+    <path d="M 64 43 C 64 45.5, 50 46, 36 43" fill="none" stroke-width="4"/>
+
+    <!-- 2. Neck -->
+    <path d="M 43 38 C 41 40, 39 41, 38 42 L 62 42 C 61 41, 59 40, 57 38 Z" stroke-width="2"/>
+    <path d="M 57 38 C 59 40, 61 41, 62 42" fill="none" stroke-width="4"/>
+
+    <!-- 1. Sphere -->
+    <circle cx="50" cy="27" r="12" stroke-width="2"/>
+    <path d="M 58.5 18.5 A 12 12 0 0 1 58.5 35.5" fill="none" stroke-width="4"/>
   </g>
 </svg>
