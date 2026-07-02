@@ -1,0 +1,6 @@
+{
+  "name": "Minimalist Chess",
+  "description": "A minimalist pass-and-play chess game for two players.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
