@@ -1,20 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Background -->
-  <rect width="64" height="64" rx="12" fill="#fafaf9"/>
+  <!-- Soft grey background, suitable for greyscale screens -->
+  <rect width="64" height="64" rx="16" fill="#e5e5e5"/>
   
   <!-- Cross -->
-  <rect x="30" y="12" width="4" height="12" fill="#1c1917"/>
-  <rect x="26" y="16" width="12" height="4" fill="#1c1917"/>
+  <rect x="30" y="12" width="4" height="12" fill="#111111" rx="1"/>
+  <rect x="26" y="16" width="12" height="4" fill="#111111" rx="1"/>
   
-  <!-- Crown -->
-  <path d="M 18 28 L 26 40 L 38 40 L 46 28 L 36 30 L 32 22 L 28 30 Z" fill="#1c1917"/>
+  <!-- Crown body -->
+  <path d="M 16 28 L 24 42 L 40 42 L 48 28 L 37 32 L 32 22 L 27 32 Z" fill="#111111" stroke="#111111" stroke-width="2" stroke-linejoin="round"/>
   
-  <!-- Base Divider -->
-  <rect x="24" y="42" width="16" height="3" fill="#1c1917"/>
-  
-  <!-- Base Bottom -->
-  <path d="M 22 47 L 42 47 L 46 52 L 18 52 Z" fill="#1c1917"/>
-  
-  <!-- Base Foot -->
-  <rect x="16" y="54" width="32" height="4" rx="2" fill="#1c1917"/>
+  <!-- Base rings -->
+  <rect x="22" y="46" width="20" height="3" fill="#111111" rx="1.5"/>
+  <rect x="18" y="52" width="28" height="4" fill="#111111" rx="2"/>
 </svg>
