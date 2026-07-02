@@ -3,9 +3,34 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+import { VitePWA } from 'vite-plugin-pwa';
+
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      VitePWA({
+        registerType: 'autoUpdate',
+        includeAssets: ['favicon.svg'],
+        manifest: {
+          name: 'Genesis',
+          short_name: 'Genesis',
+          description: 'A minimalist pass-and-play chess game for two players.',
+          theme_color: '#fafaf9',
+          background_color: '#fafaf9',
+          display: 'standalone',
+          icons: [
+            {
+              src: 'favicon.svg',
+              sizes: '512x512',
+              type: 'image/svg+xml',
+              purpose: 'any maskable'
+            }
+          ]
+        }
+      })
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Minimalist Chess Pawn -->
+  <rect width="64" height="64" rx="12" fill="#fafaf9"/>
+  
+  <!-- Pawn Head -->
+  <circle cx="32" cy="22" r="8" fill="#1c1917"/>
+  
+  <!-- Pawn Body -->
+  <path d="M24 46 Q 32 25 40 46 Z" fill="#1c1917"/>
+  
+  <!-- Pawn Base -->
+  <rect x="20" y="46" width="24" height="4" rx="2" fill="#1c1917"/>
+</svg>
