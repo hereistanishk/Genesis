@@ -1,0 +1,20 @@
+{
+  "collections": [
+    {
+      "name": "users",
+      "description": "User profiles",
+      "fields": [
+        {
+          "name": "email",
+          "type": "string",
+          "description": "User's email address"
+        },
+        {
+          "name": "createdAt",
+          "type": "timestamp",
+          "description": "Timestamp when the user account was created"
+        }
+      ]
+    }
+  ]
+}

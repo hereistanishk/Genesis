@@ -1,6 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Chess, Square } from 'chess.js';
-import { RotateCcw } from 'lucide-react';
+import { RotateCcw, LogOut } from 'lucide-react';
+import { Auth } from './components/Auth';
+import { auth } from './lib/firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 const PIECE_SYMBOLS: Record<string, Record<string, string>> = {
   w: { k: '♔', q: '♕', r: '♖', b: '♗', n: '♘', p: '♙' },
@@ -8,9 +11,31 @@ const PIECE_SYMBOLS: Record<string, Record<string, string>> = {
 };
 
 export default function App() {
+  const [authStatus, setAuthStatus] = useState<'idle' | 'guest' | 'logged_in'>('idle');
+  const [loadingAuth, setLoadingAuth] = useState(true);
   const [game, setGame] = useState(new Chess());
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null);
   const [optionSquares, setOptionSquares] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setAuthStatus('logged_in');
+      } else if (authStatus !== 'guest') {
+        setAuthStatus('idle');
+      }
+      setLoadingAuth(false);
+    });
+
+    return () => unsubscribe();
+  }, [authStatus]);
+
+  const handleLogout = async () => {
+    if (authStatus === 'logged_in') {
+      await signOut(auth);
+    }
+    setAuthStatus('idle');
+  };
 
   const onSquareClick = (square: Square) => {
     if (game.isGameOver()) return;
@@ -75,6 +100,23 @@ export default function App() {
     }
   }
 
+  if (loadingAuth) {
+    return (
+      <div className="min-h-screen bg-stone-50 flex items-center justify-center font-sans text-stone-900">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-stone-900"></div>
+      </div>
+    );
+  }
+
+  if (authStatus === 'idle') {
+    return (
+      <Auth 
+        onLogin={() => setAuthStatus('logged_in')} 
+        onGuest={() => setAuthStatus('guest')} 
+      />
+    );
+  }
+
   return (
     <div className="min-h-screen bg-stone-50 flex flex-col items-center justify-center p-4 font-sans text-stone-900">
       <div className="max-w-[480px] w-full space-y-8">
@@ -84,13 +126,22 @@ export default function App() {
             <h1 className="text-2xl font-medium tracking-tight">Genesis</h1>
             <p className="text-stone-500">{status}</p>
           </div>
-          <button
-            onClick={resetGame}
-            className="p-2 text-stone-400 hover:text-stone-900 hover:bg-stone-200 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-stone-400"
-            title="Reset Game"
-          >
-            <RotateCcw className="w-5 h-5" />
-          </button>
+          <div className="flex gap-2">
+            <button
+              onClick={resetGame}
+              className="p-2 text-stone-400 hover:text-stone-900 hover:bg-stone-200 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-stone-400"
+              title="Reset Game"
+            >
+              <RotateCcw className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handleLogout}
+              className="p-2 text-stone-400 hover:text-stone-900 hover:bg-stone-200 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-stone-400"
+              title="Log Out"
+            >
+              <LogOut className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Board */}
